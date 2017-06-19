@@ -45,3 +45,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+#bat files
+start.bat
+
+# Node.
+node_modules
+npm-debug.log
