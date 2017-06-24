@@ -8,6 +8,10 @@ import { ContactsListComponent } from './contacts/Contacts.List.Component';
 import { ContactsDetailComponent } from './contacts/Contacts.Detail.Component';
 import { ContactsAppRoutes } from './contacts/routes/contacts.routes.js';
 import { ContactsService } from './contacts/contacts.service';
+import { ContactsCreditsComponent } from './contacts/Contact.Credits.Component'
+import { AuthGuard } from './contacts/RouteGuards/auth-guard.service';
+import {CanDeactivateGuard} from './contacts/RouteGuards/ConfirmDeactivateGuard';
+ 
 
 @NgModule({
   imports: [
@@ -18,9 +22,12 @@ import { ContactsService } from './contacts/contacts.service';
     AppComponent,
     ContactsAppComponent,
     ContactsDetailComponent,
-    ContactsListComponent],
+    ContactsListComponent,
+    ContactsCreditsComponent],
   providers: [
-    ContactsService
+    ContactsService,
+    AuthGuard,
+    CanDeactivateGuard
   ],
   bootstrap: [
     AppComponent

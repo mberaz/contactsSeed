@@ -7,17 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var ContactsAppComponent = (function () {
-    function ContactsAppComponent() {
-        this.qsParam = 1;
+var CanDeactivateGuard = (function () {
+    function CanDeactivateGuard() {
     }
-    return ContactsAppComponent;
+    CanDeactivateGuard.prototype.canDeactivate = function (component) {
+        return component.canDeactivate ? component.canDeactivate() : window.confirm('Do you really want to cancel?');
+    };
+    return CanDeactivateGuard;
 }());
-ContactsAppComponent = __decorate([
-    core_1.Component({
-        selector: 'contacts-app',
-        template: "\n    <h1>Contacts App</h1>\n <ul>\n      <li><a [routerLink]=\"['/']\">Contact List</a></li>\n      <li><a [routerLink]=\"['info' ]\" [queryParams]=\"{ page: qsParam }\">Info</a></li>\n    </ul>\n   <router-outlet></router-outlet>\n  "
-    })
-], ContactsAppComponent);
-exports.ContactsAppComponent = ContactsAppComponent;
-//# sourceMappingURL=Contacts.App.Component.js.map
+CanDeactivateGuard = __decorate([
+    core_1.Injectable()
+], CanDeactivateGuard);
+exports.CanDeactivateGuard = CanDeactivateGuard;
+//# sourceMappingURL=ConfirmDeactivateGuard.js.map

@@ -15,6 +15,9 @@ var Contacts_List_Component_1 = require("./contacts/Contacts.List.Component");
 var Contacts_Detail_Component_1 = require("./contacts/Contacts.Detail.Component");
 var contacts_routes_js_1 = require("./contacts/routes/contacts.routes.js");
 var contacts_service_1 = require("./contacts/contacts.service");
+var Contact_Credits_Component_1 = require("./contacts/Contact.Credits.Component");
+var auth_guard_service_1 = require("./contacts/RouteGuards/auth-guard.service");
+var ConfirmDeactivateGuard_1 = require("./contacts/RouteGuards/ConfirmDeactivateGuard");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,10 +33,13 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             Contacts_App_Component_1.ContactsAppComponent,
             Contacts_Detail_Component_1.ContactsDetailComponent,
-            Contacts_List_Component_1.ContactsListComponent
+            Contacts_List_Component_1.ContactsListComponent,
+            Contact_Credits_Component_1.ContactsCreditsComponent
         ],
         providers: [
-            contacts_service_1.ContactsService
+            contacts_service_1.ContactsService,
+            auth_guard_service_1.AuthGuard,
+            ConfirmDeactivateGuard_1.CanDeactivateGuard
         ],
         bootstrap: [
             app_component_1.AppComponent
